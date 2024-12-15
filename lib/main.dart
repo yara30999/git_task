@@ -11,11 +11,13 @@ void selectionSort(List<int> list) {
         minIndex = j;
       }
     }
+
     // Swap the found minimum element with the first unsorted element
     if (minIndex != i) {
-      int temp = list[i];
-      list[i] = list[minIndex];
-      list[minIndex] = temp;
+      // Dart-specific way to swap elements without a temp variable
+      list[i] = list[i] + list[minIndex];
+      list[minIndex] = list[i] - list[minIndex];
+      list[i] = list[i] - list[minIndex];
     }
   }
 }
