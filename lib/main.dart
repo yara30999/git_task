@@ -11,6 +11,12 @@ void selectionSort(List<int> list) {
         minIndex = j;
       }
     }
+    // Swap the found minimum element with the first unsorted element
+    if (minIndex != i) {
+      int temp = list[i];
+      list[i] = list[minIndex];
+      list[minIndex] = temp;
+    }
   }
 }
 
